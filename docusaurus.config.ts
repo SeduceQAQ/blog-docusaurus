@@ -138,6 +138,8 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  plugins: ["plugin-image-zoom"],
 };
 
 export default config;
