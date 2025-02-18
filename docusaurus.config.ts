@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { LastModOptionList } from "@docusaurus/plugin-sitemap/lib/types";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -139,7 +140,37 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
-  plugins: ["plugin-image-zoom"],
+  plugins: [
+    "plugin-image-zoom",
+    [
+      "@docusaurus/plugin-sitemap",
+      {
+        lastmod: "date",
+        changefreq: "weekly",
+        priority: 0.5,
+        ignorePatterns: ["/tags/**"],
+        filename: "sitemap.xml",
+        createSitemapItems: async (params) => {
+          const { defaultCreateSitemapItems, ...rest } = params;
+          const items = await defaultCreateSitemapItems(rest);
+          return items.filter((item) => !item.url.includes("/page/"));
+        },
+      },
+    ],
+    [
+      "@docusaurus/plugin-google-gtag",
+      {
+        trackingID: "G-999X9XX9XX",
+        anonymizeIP: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-google-tag-manager",
+      {
+        containerId: "GTM-12345",
+      },
+    ],
+  ],
 };
 
 export default config;
