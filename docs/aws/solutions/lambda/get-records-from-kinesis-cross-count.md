@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: 跨账户获取Kinesis消息
+description: 跨账户获取Kinesis消息
+keywords: [aws, lambda, kinesis, cross-account]
 ---
 
 # 跨账户获取 Kinesis 消息
