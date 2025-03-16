@@ -9,7 +9,7 @@ keywords: [aws, lambda, kinesis, cross-account]
 
 ## 架构
 
-![](https://images.blog.seduceqaq.com/images/2025/02/16/20250216161154971.webp)
+![](https://images.blog.seduceqaq.com/images/2025/03/16/20250316213530458.webp)
 
 ## 设置
 
