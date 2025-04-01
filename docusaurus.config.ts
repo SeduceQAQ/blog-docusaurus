@@ -90,7 +90,11 @@ const config: Config = {
           position: "left",
           label: "Code",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        {
+          to: "/blog",
+          label: "Blog",
+          position: "left"
+        },
         {
           href: "https://github.com/SeduceQAQ/blog-docusaurus",
           label: "GitHub",
