@@ -1,4 +1,4 @@
-# Create client with credentials file
+# Create client with credentials profile
 
 ```js
 import { FooClient } from "@aws-sdk/client-foo"
