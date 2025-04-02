@@ -19,8 +19,8 @@ You can migrate ongoing Kafka record processing to a new trigger by using the sa
 
 ## Additional Information
 
-[](https://kafka.apache.org/22/documentation.html#brokerconfigs)
+[](https://kafka.apache.org/documentation/#brokerconfigs_offsets.retention.minutes)
 
-> After a consumer group loses all its consumers (i.e. becomes empty) its offsets will be kept for this retention period before getting discarded. For standalone consumers (using manual assignment), offsets will be expired after the time of last commit plus this retention period.
+> For subscribed consumers, committed offset of a specific partition will be expired and discarded when 1) this retention period has elapsed after the consumer group loses all its consumers (i.e. becomes empty); 2) this retention period has elapsed since the last time an offset is committed for the partition and the group is no longer subscribed to the corresponding topic.
 
 By default, the retention period is 7 days (10080 minutes).
