@@ -1,19 +1,19 @@
 ---
 sidebar_position: 1
-title: 跨账户获取Kinesis消息
-description: 跨账户获取Kinesis消息
+title: Get records from Kinesis cross-count
+description: Get records from Kinesis cross-count
 keywords: [aws, lambda, kinesis, cross-account]
 ---
 
-# 跨账户获取 Kinesis 消息
+# Get records from Kinesis cross-count
 
-## 架构
+## Architecture
 
 ![](https://images.blog.seduceqaq.com/images/2025/03/16/20250316213530458.webp)
 
-## 设置
+## Setup
 
-### Kinesis 数据流共享策略
+### Kinesis data stream sharing policy
 
 ```json
 {
@@ -38,7 +38,7 @@ keywords: [aws, lambda, kinesis, cross-account]
 }
 ```
 
-### KMS 密钥策略
+### KMS key policy
 
 ```json
 {
@@ -52,11 +52,11 @@ keywords: [aws, lambda, kinesis, cross-account]
 }
 ```
 
-### Lambda 角色权限
+### Lambda role permissions
 
-1. 为 Lambda 执行角色附加 `AWSLambdaKinesisExecutionRole` AWS 托管策略
+1. Attach the `AWSLambdaKinesisExecutionRole` AWS managed policy to the Lambda execution role
 
-2. 为 Lambda 执行角色附加 `kms:Decrypt` 权限
+2. Attach the `kms:Decrypt` permission to the Lambda execution role
 
 ```json
 {
@@ -72,7 +72,7 @@ keywords: [aws, lambda, kinesis, cross-account]
 }
 ```
 
-## 测试
+## Test
 
 ```bash
 aws kinesis put-record \
