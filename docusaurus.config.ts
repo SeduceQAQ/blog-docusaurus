@@ -91,6 +91,12 @@ const config: Config = {
           label: "Code",
         },
         {
+          type: "docSidebar",
+          sidebarId: "javaSidebar",
+          position: "left",
+          label: "Java",
+        },
+        {
           to: "/blog",
           label: "Blog",
           position: "left",
