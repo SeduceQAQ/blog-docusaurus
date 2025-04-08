@@ -56,3 +56,20 @@ public class ExecutorServiceExample {
     }
 }
 ```
+
+## Thread Pool
+
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Main {
+    public static void main(String[] args) {
+        ExecutorService singleThreadPool = Executors.newSingleThreadExecutor();
+        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
+        ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
+        ExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(3);
+        ExecutorService newSingleThreadScheduledThreadPool = Executors.newSingleThreadScheduledExecutor();
+    }
+}
+```
